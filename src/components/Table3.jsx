@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import {increment,decrement} from '../Redux/Action'
+import PropTypes from 'prop-types'
 
 function mapState(state) {
     return {
@@ -18,7 +19,7 @@ function mapDispatch(dispatch) {
 
     }
 }
-class Table2 extends React.Component {
+class Table3 extends React.Component {
     render() {
         
         return (
@@ -32,4 +33,8 @@ class Table2 extends React.Component {
         )
     }
 }
-export default connect(mapState, mapDispatch)(Table2)
+Table3.propTypes={
+    initValue: PropTypes.number.isRequired,
+}
+export default connect(mapState, mapDispatch)(Table3)
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import TableBox from './Table3'
 
 export default class Home extends React.Component {
   
@@ -15,6 +16,8 @@ export default class Home extends React.Component {
                     </li>
                 </ul>
                 {this.props.children}
+
+                <TableBox />
             </div>
         )
     }
