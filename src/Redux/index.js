@@ -1,7 +1,6 @@
-import { createStore } from 'redux'
-import reducer from './Reducer'
-const initValue = {
-    'count': 0,
-}
-const store = createStore(reducer, initValue)
-export default store
+import { combineReducers } from 'redux';
+import table from './table'
+const reducer = combineReducers({
+  table,
+})
+export default reducer
