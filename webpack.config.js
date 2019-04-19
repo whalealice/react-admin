@@ -53,6 +53,14 @@ module.exports = {
             {
                 test: /\.less$/,
                 loader: 'less-loader' // compiles Less to CSS
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+                options: {
+                  // eslint options (if necessary)
+                }
             }
         ],
     },
