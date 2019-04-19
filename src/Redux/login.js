@@ -1,10 +1,11 @@
 import { createAction, handleActions } from 'redux-actions';
 import Immutable from 'immutable';
 
-const createInitState = () =>
-    Immutable.fromJS({
+const createInitState = () => {
+    return Immutable.fromJS({
         count: 0,
     })
+}
 const $$initialState = createInitState()
 export const INCEREMENT_COUNT = 'increment count'
 export const DECREMENT_COUNT = 'decrement count'

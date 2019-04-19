@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 export default class Login extends React.Component {
-  
     render() {
         return (
-            <div>
-                Login
-            </div>
+            <div>Login</div>
         )
     }
 }

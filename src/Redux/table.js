@@ -1,10 +1,11 @@
-import {createAction,handleActions} from 'redux-actions'
+import { createAction, handleActions } from 'redux-actions'
 import Immutable from 'immutable'
 
-const createInitState = () =>
-    Immutable.fromJS({
+const createInitState = () => {
+    return Immutable.fromJS({
         count: 0,
     })
+}
 const $$initialState = createInitState()
 export const INCEREMENT_COUNT = 'increment count'
 export const DECREMENT_COUNT = 'decrement count'
@@ -26,14 +27,14 @@ export const onDecrement = createAction(DECREMENT_COUNT, opts => opts)
 //       movieDetail: action.payload.data
 //     }
 //   }
-  
+
 //   actions[type.MOVIE_COMMENT_LIST + type.FETCH_SUCCESS_SUFFIX] = (state, action) => {
 //     return {
 //       ...state,
 //       commentData: action.payload.data
 //     }
 //   }
-  
-  const reducer = handleActions(handlers, $$initialState)
-  
-  export default reducer
+
+const reducer = handleActions(handlers, $$initialState)
+
+export default reducer

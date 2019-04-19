@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom';
-import { HashRouter,BrowserRouter as Router, Route, Switch, hashHistory } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import reducer from './Redux/index';
 // import routes from './router'
@@ -22,17 +22,17 @@ const BasicRoute = () => (
                     <Route path="/home/table1" component={Table1} />
                     <Route path="/home/table2" component={Table2} />
                 </Home>
-           
-                <Route path="/login" component={Login}/>  
-              {/* {routes.map((route,index)  => (
+
+                <Route path="/login" component={Login} />
+                {/* {routes.map((route,index)  => (
                    <Route
                    key={index}
                    path={route.path}
                    component={route.component}
-                 />  
+                    />
                 ))} */}
             </Switch>
         </Router>
     </Provider>
 );
-ReactDOM.render(<BasicRoute/>, document.getElementById('app')) 
+ReactDOM.render(<BasicRoute />, document.getElementById('app'))

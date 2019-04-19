@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
+
 module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, './src/index.js'),
@@ -13,7 +14,7 @@ module.exports = {
         hot: true,
         inline: true,
         progress: true,
-        contentBase: path.join(__dirname, "src"), //本地服务器所加载的页面所在的目录
+        contentBase: path.join(__dirname, 'src'), // 本地服务器所加载的页面所在的目录
         port: 6060,
         // proxy:{ //重定向
         //     "/api": {
@@ -30,10 +31,10 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: ['@babel/plugin-proposal-class-properties']
-                    }
+                        plugins: ['@babel/plugin-proposal-class-properties'],
+                    },
                 },
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
@@ -45,30 +46,26 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.less$/,
-                loader: 'less-loader' // compiles Less to CSS
+                            limit: 8192,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "eslint-loader",
+                loader: 'eslint-loader',
                 options: {
-                  // eslint options (if necessary)
-                }
-            }
+                    // eslint options (if necessary)
+                },
+            },
         ],
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ],
     resolve: {
-        //自动补全后缀，注意第一个必须是空字符串,后缀一定以点开头
-        extensions: [" ",".jsx",".js",".css",".json"],
+        // 自动补全后缀，注意第一个必须是空字符串,后缀一定以点开头
+        extensions: [' ', '.jsx', '.js', '.css', '.json'],
     },
-};
+}
