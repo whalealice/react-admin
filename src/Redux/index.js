@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import table from './table'
-import login from './login'
+import user from './login'
 
-const reducer = combineReducers({ table, login })
+const reducer = combineReducers({ table, user })
 export default reducer

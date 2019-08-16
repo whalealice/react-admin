@@ -1,9 +1,21 @@
 import { createAction, handleActions } from 'redux-actions';
 import Immutable from 'immutable';
 
+
 const createInitState = () => {
     return Immutable.fromJS({
-        count: 0,
+        navMenu: [
+            {
+                path: '/Table1',
+                name: 'Table1',
+                component: 'Table1',
+            },
+            {
+                path: '/Table2',
+                name: 'Table2',
+                component: 'Table2',
+            },
+        ],
     })
 }
 const $$initialState = createInitState()
@@ -21,19 +33,6 @@ const handlers = {
 }
 export const onIncrement = createAction(INCEREMENT_COUNT, opts => opts)
 export const onDecrement = createAction(DECREMENT_COUNT, opts => opts)
-//   actions[type.MOVIE_DETAIL + type.FETCH_SUCCESS_SUFFIX] = (state, action) => {
-//     return {
-//       ...state,
-//       movieDetail: action.payload.data
-//     }
-//   }
 
-//   actions[type.MOVIE_COMMENT_LIST + type.FETCH_SUCCESS_SUFFIX] = (state, action) => {
-//     return {
-//       ...state,
-//       commentData: action.payload.data
-//     }
-//   }
-
-const reducer = handleActions(handlers, $$initialState);
-export default reducer;
+const user = handleActions(handlers, $$initialState);
+export default user;

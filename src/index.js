@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+    BrowserRouter as Router, Route, Switch, Redirect,
+} from 'react-router-dom'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import reducer from './Redux/index';
@@ -18,6 +20,12 @@ const BasicRoute = () => (
     <Provider store={store}>
         <Router>
             <Switch>
+                <Route
+                    exact={true}
+                    path="/"
+                    render={() => <Redirect to="/home"></Redirect>}
+                >
+                </Route>
                 <Home path="/home" component={Home}>
                     <Route path="/home/table1" component={Table1} />
                     <Route path="/home/table2" component={Table2} />

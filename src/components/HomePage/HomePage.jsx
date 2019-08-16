@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, Icon, Button } from 'antd'
-// import styles from './index.less'
+// import './index.less'
 
 const SubMenu = Menu.SubMenu
+
 export default class Home extends React.Component {
     constructor() {
         super()
@@ -26,21 +27,13 @@ export default class Home extends React.Component {
                     theme="dark"
                     inlineCollapsed={this.state.collapsed}
                 >
-                    <Menu.Item key="1">
-                        <Icon type="pie-chart" />
-                        <span>Option 1</span>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Icon type="desktop" />
-                        <span>Option 2</span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="inbox" />
-                        <span>Option 3</span>
-                    </Menu.Item>
                     <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
+                        <Menu.Item key="5">
+                        <Link to="/home/table1">table1</Link>
+                        </Menu.Item>
+                        <Menu.Item key="6">
+                        <Link to="/home/table2">table2</Link>
+                        </Menu.Item>
                         <Menu.Item key="7">Option 7</Menu.Item>
                         <Menu.Item key="8">Option 8</Menu.Item>
                     </SubMenu>
@@ -53,14 +46,6 @@ export default class Home extends React.Component {
                         </SubMenu>
                     </SubMenu>
                 </Menu>
-                {/* <ul>
-                    <li>
-                        <Link to="/home/table1">table1</Link>
-                    </li>
-                    <li>
-                        <Link to="/home/table2">table2</Link>
-                    </li>
-                </ul> */}
                 {this.props.children}
             </div>
         )

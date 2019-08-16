@@ -18,6 +18,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"fixed-data-table-2": "^0.8.26",
 		"immutable": "^4.0.0-rc.12",
 		"lodash": "^4.17.11",
 		"react": "^16.6.3",

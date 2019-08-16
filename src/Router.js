@@ -5,23 +5,27 @@ import Table2 from './components/Table2';
 
 const routes = [
     {
-        path: "/Login",
-        name: "Login",
+        path: '/',
+        redirect: '/Home',
+    },
+    {
+        path: '/Login',
+        name: 'Login',
         component: Login,
     },
     {
-        path: "/Home",
-        name: "Home",
+        path: '/Home',
+        name: 'Home',
         component: Home,
-    }, 
+    },
     {
-        path: "/Table1",
-        name: "Table1",
+        path: '/Table1',
+        name: 'Table1',
         component: Table1,
     },
     {
-        path: "/Table2",
-        name: "Table2",
+        path: '/Table2',
+        name: 'Table2',
         component: Table2,
     },
 ];
